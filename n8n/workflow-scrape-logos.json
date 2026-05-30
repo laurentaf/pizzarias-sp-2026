@@ -1,0 +1,159 @@
+{
+  "name": "Scrape Logos Pizzarias SP",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "read",
+        "filePath": "data/enderecos.csv",
+        "options": {
+          "fromLine": 17,
+          "toLine": 101
+        }
+      },
+      "id": "read-csv",
+      "name": "Ler Pizzarias 16-100",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "values": [
+          {
+            "name": "searchQuery",
+            "value": "={{ $json.Pizzaria }} pizzaria São Paulo"
+          },
+          {
+            "name": "posicao",
+            "value": "={{ $json.Posição }}"
+          },
+          {
+            "name": "nome",
+            "value": "={{ $json.Pizzaria }}"
+          }
+        ],
+        "options": {}
+      },
+      "id": "prepare-query",
+      "name": "Preparar Query",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://maps.googleapis.com/maps/api/place/textsearch/json",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "query", "value": "={{ $json.searchQuery }}" },
+            { "name": "key", "value": "={{ $env.GOOGLE_PLACES_API_KEY }}" }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "text-search",
+      "name": "Google Text Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = $json.results || [];\nif (results.length === 0) return { json: { error: 'not_found' } };\nconst place = results[0];\nconst photoRef = place.photos && place.photos[0] ? place.photos[0].photo_reference : null;\nreturn {\n  json: {\n    place_id: place.place_id,\n    name: place.name,\n    photo_reference: photoRef,\n    posicao: $('Preparar Query').item.json.posicao,\n    nome: $('Preparar Query').item.json.nome\n  }\n};"
+      },
+      "id": "extract-photo-ref",
+      "name": "Extrair Photo Reference",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [910, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.photo_reference }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "has-photo",
+      "name": "Tem Foto?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1130, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://maps.googleapis.com/maps/api/place/photo",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "photoreference", "value": "={{ $json.photo_reference }}" },
+            { "name": "maxwidth", "value": "400" },
+            { "name": "key", "value": "={{ $env.GOOGLE_PLACES_API_KEY }}" }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "download-photo",
+      "name": "Download Foto",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1350, 250]
+    },
+    {
+      "parameters": {
+        "fileName": "=logos/{{ $('Extrair Photo Reference').item.json.posicao }}-{{ $('Extrair Photo Reference').item.json.nome }}.jpg",
+        "fileContent": "={{ $json.data }}",
+        "options": {}
+      },
+      "id": "save-file",
+      "name": "Salvar Imagem",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [1570, 250]
+    },
+    {
+      "parameters": {
+        "values": [
+          { "name": "status", "value": "skipped" },
+          { "name": "nome", "value": "={{ $json.nome }}" }
+        ]
+      },
+      "id": "no-photo",
+      "name": "Sem Foto",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [1350, 400]
+    }
+  ],
+  "connections": {
+    "Ler Pizzarias 16-100": { "main": [[{ "node": "Preparar Query", "type": "main", "index": 0 }]] },
+    "Preparar Query": { "main": [[{ "node": "Google Text Search", "type": "main", "index": 0 }]] },
+    "Google Text Search": { "main": [[{ "node": "Extrair Photo Reference", "type": "main", "index": 0 }]] },
+    "Extrair Photo Reference": { "main": [[{ "node": "Tem Foto?", "type": "main", "index": 0 }]] },
+    "Tem Foto?": {
+      "main": [
+        [{ "node": "Download Foto", "type": "main", "index": 0 }],
+        [{ "node": "Sem Foto", "type": "main", "index": 0 }]
+      ]
+    },
+    "Download Foto": { "main": [[{ "node": "Salvar Imagem", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
