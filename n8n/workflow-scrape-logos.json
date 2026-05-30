@@ -21,7 +21,7 @@
         "values": [
           {
             "name": "searchQuery",
-            "value": "={{ $json.Pizzaria }} pizzaria São Paulo"
+            "value": "={{ $json.Pizzaria }} pizzaria logo"
           },
           {
             "name": "posicao",
@@ -43,30 +43,32 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "https://maps.googleapis.com/maps/api/place/textsearch/json",
-        "sendQuery": true,
-        "queryParameters": {
+        "url": "=https://www.google.com/search?q={{ encodeURIComponent($json.searchQuery) }}&tbm=isch",
+        "sendHeaders": true,
+        "headerParameters": {
           "parameters": [
-            { "name": "query", "value": "={{ $json.searchQuery }}" },
-            { "name": "key", "value": "={{ $env.GOOGLE_PLACES_API_KEY }}" }
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            }
           ]
         },
         "options": {
           "timeout": 10000
         }
       },
-      "id": "text-search",
-      "name": "Google Text Search",
+      "id": "google-search",
+      "name": "Google Images Search",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4,
       "position": [690, 300]
     },
     {
       "parameters": {
-        "jsCode": "const results = $json.results || [];\nif (results.length === 0) return { json: { error: 'not_found' } };\nconst place = results[0];\nconst photoRef = place.photos && place.photos[0] ? place.photos[0].photo_reference : null;\nreturn {\n  json: {\n    place_id: place.place_id,\n    name: place.name,\n    photo_reference: photoRef,\n    posicao: $('Preparar Query').item.json.posicao,\n    nome: $('Preparar Query').item.json.nome\n  }\n};"
+        "jsCode": "const html = $json.data || '';\nconst imgRegex = /https?:\\/\\/[^\"']+\\.(?:jpg|jpeg|png|webp)/gi;\nconst matches = html.match(imgRegex) || [];\nconst filtered = matches.filter(url => \n  !url.includes('google') && \n  !url.includes('gstatic') &&\n  !url.includes('schema.org') &&\n  url.length < 200\n);\nconst url = filtered[0] || null;\nreturn {\n  json: {\n    imageUrl: url,\n    posicao: $('Preparar Query').item.json.posicao,\n    nome: $('Preparar Query').item.json.nome\n  }\n};"
       },
-      "id": "extract-photo-ref",
-      "name": "Extrair Photo Reference",
+      "id": "extract-image-url",
+      "name": "Extrair URL da Imagem",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [910, 300]
@@ -76,14 +78,14 @@
         "conditions": {
           "boolean": [
             {
-              "value1": "={{ $json.photo_reference }}",
+              "value1": "={{ $json.imageUrl }}",
               "operation": "isNotEmpty"
             }
           ]
         }
       },
-      "id": "has-photo",
-      "name": "Tem Foto?",
+      "id": "has-image",
+      "name": "Tem Imagem?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [1130, 300]
@@ -91,32 +93,25 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "=https://maps.googleapis.com/maps/api/place/photo",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            { "name": "photoreference", "value": "={{ $json.photo_reference }}" },
-            { "name": "maxwidth", "value": "400" },
-            { "name": "key", "value": "={{ $env.GOOGLE_PLACES_API_KEY }}" }
-          ]
-        },
+        "url": "={{ $json.imageUrl }}",
         "options": {
           "response": {
             "response": {
               "responseFormat": "file"
             }
-          }
+          },
+          "timeout": 10000
         }
       },
-      "id": "download-photo",
-      "name": "Download Foto",
+      "id": "download-image",
+      "name": "Download Imagem",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4,
       "position": [1350, 250]
     },
     {
       "parameters": {
-        "fileName": "=logos/{{ $('Extrair Photo Reference').item.json.posicao }}-{{ $('Extrair Photo Reference').item.json.nome }}.jpg",
+        "fileName": "=logos/{{ $('Extrair URL da Imagem').item.json.posicao }}-{{ $('Extrair URL da Imagem').item.json.nome }}.jpg",
         "fileContent": "={{ $json.data }}",
         "options": {}
       },
@@ -133,8 +128,8 @@
           { "name": "nome", "value": "={{ $json.nome }}" }
         ]
       },
-      "id": "no-photo",
-      "name": "Sem Foto",
+      "id": "no-image",
+      "name": "Sem Imagem",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3,
       "position": [1350, 400]
@@ -142,16 +137,16 @@
   ],
   "connections": {
     "Ler Pizzarias 16-100": { "main": [[{ "node": "Preparar Query", "type": "main", "index": 0 }]] },
-    "Preparar Query": { "main": [[{ "node": "Google Text Search", "type": "main", "index": 0 }]] },
-    "Google Text Search": { "main": [[{ "node": "Extrair Photo Reference", "type": "main", "index": 0 }]] },
-    "Extrair Photo Reference": { "main": [[{ "node": "Tem Foto?", "type": "main", "index": 0 }]] },
-    "Tem Foto?": {
+    "Preparar Query": { "main": [[{ "node": "Google Images Search", "type": "main", "index": 0 }]] },
+    "Google Images Search": { "main": [[{ "node": "Extrair URL da Imagem", "type": "main", "index": 0 }]] },
+    "Extrair URL da Imagem": { "main": [[{ "node": "Tem Imagem?", "type": "main", "index": 0 }]] },
+    "Tem Imagem?": {
       "main": [
-        [{ "node": "Download Foto", "type": "main", "index": 0 }],
-        [{ "node": "Sem Foto", "type": "main", "index": 0 }]
+        [{ "node": "Download Imagem", "type": "main", "index": 0 }],
+        [{ "node": "Sem Imagem", "type": "main", "index": 0 }]
       ]
     },
-    "Download Foto": { "main": [[{ "node": "Salvar Imagem", "type": "main", "index": 0 }]] }
+    "Download Imagem": { "main": [[{ "node": "Salvar Imagem", "type": "main", "index": 0 }]] }
   },
   "settings": {
     "executionOrder": "v1"
