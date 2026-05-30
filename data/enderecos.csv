@@ -1,0 +1,101 @@
+Posição;Pizzaria;Endereço;Bairro;Cidade;Estado;CEP;Zona;Latitude;Longitude
+1;Soffio Pizzeria;R. João de Sousa Dias, 281;Campo Belo;São Paulo;SP;04618-001;Sul;-23.621453;-46.671043
+2;A Pizza da Mooca;R. da Mooca, 1747;Mooca;São Paulo;SP;03110-008;Leste;-23.555891;-46.606216
+3;Leggera;R. Diana, 80;Perdizes;São Paulo;SP;05019-000;Oeste;-23.528912;-46.679612
+4;Unica Pizzeria;R. Chandler, 107;Vila Marieta;São Paulo;SP;03619-030;Leste;-23.518923;-46.529041
+5;Na'Piazza Napoletani;R. Gandavo, 523;Vila Mariana;São Paulo;SP;04023-001;Sul;-23.593712;-46.643012
+6;Bocada's;R. Dr. Ribeiro de Almeida, 167;Barra Funda;São Paulo;SP;01137-020;Oeste;-23.526231;-46.654123
+7;Starlane;R. Pedroso Alvarenga, 524;Itaim Bibi;São Paulo;SP;04531-011;Sul;-23.584102;-46.676231
+8;Carlos Pizza;R. Harmonia, 501;Vila Madalena;São Paulo;SP;05435-000;Oeste;-23.554902;-46.688123
+9;Bráz;R. Graúna, 125;Moema;São Paulo;SP;04514-000;Sul;-23.603123;-46.666102
+10;Trigo Pane Pizza;R. Dr. Alceu de Campos Rodrigues, 618;Vila Nova Conceição;São Paulo;SP;04544-000;Sul;-23.591023;-46.672102
+11;Di Bari Pizza;R. Bom Pastor, 1496;Ipiranga;São Paulo;SP;04203-001;Sul;-23.590123;-46.609231
+12;GattoFiga Pizza Bar;R. Luís Góis, 1625;Mirandópolis;São Paulo;SP;04043-350;Sul;-23.612102;-46.640123
+13;Astéria Forneria;R. Des. do Vale, 442;Perdizes;São Paulo;SP;05010-040;Oeste;-23.532102;-46.681231
+14;Bar Europa;R. Gabriel dos Santos, 553;Santa Cecília;São Paulo;SP;01231-011;Centro;-23.535902;-46.656102
+15;Da Michele Pizzeria;R. Pedroso Alvarenga, 1058;Itaim Bibi;São Paulo;SP;04531-004;Sul;-23.585102;-46.680123
+16;Foglia Forneria;R. Curitiba, 712;Paraíso;São Paulo;SP;04005-030;Sul;-23.578123;-46.655102
+17;La Crosta Forneria;R. Diogo Jácome, 591;Vila Nova Conceição;São Paulo;SP;04512-001;Sul;-23.594102;-46.668102
+18;Salt & Pepe;R. Dr. César, 950;Santana;São Paulo;SP;02013-003;Norte;-23.501231;-46.630123
+19;Pizza Mercutio;R. Dr. Melo Alves, 773;Jardim Paulista;São Paulo;SP;01417-010;Oeste;-23.561231;-46.668123
+20;Picco;R. Lisboa, 489;Pinheiros;São Paulo;SP;05413-000;Oeste;-23.559102;-46.681231
+21;Maremonti;R. Peixoto Gomide, 1810;Jardim Paulista;São Paulo;SP;01409-002;Oeste;-23.564102;-46.665102
+22;Notizia;R. Joinville, 391;Vila Mariana;São Paulo;SP;04008-011;Sul;-23.581231;-46.648102
+23;Pizzaria Cuevas;R. Diana, 687;Perdizes;São Paulo;SP;05019-000;Oeste;-23.535102;-46.678123
+24;Deveras;R. Dr. Cândido Espinheira, 768;Perdizes;São Paulo;SP;05004-000;Oeste;-23.532902;-46.672102
+25;Trilha Formentaria;R. Amaro Cavalheiro, 157;Pinheiros;São Paulo;SP;05425-010;Oeste;-23.568102;-46.699102
+26;Krøzta;R. Jesuíno Pascoal, 39;Vila Buarque;São Paulo;SP;01224-050;Centro;-23.543123;-46.651102
+27;Athenas Pizza;R. Antônio de Gouveia Giudice, 609;Alto de Pinheiros;São Paulo;SP;05460-001;Oeste;-23.551231;-46.708102
+28;Castelões;R. Jairo Gois, 126;Brás;São Paulo;SP;03004-000;Centro;-23.549102;-46.626102
+29;QT Pizza Bar;R. Moacir Piza, 68;Jardins;São Paulo;SP;01413-010;Oeste;-23.565102;-46.669102
+30;Temperani Cucina;R. Cândido Lacerda, 33;Jardim Anália Franco;São Paulo;SP;03336-045;Leste;-23.558123;-46.561102
+31;1900 Pizzeria;R. Estado de Israel, 175;Vila Mariana;São Paulo;SP;04022-000;Sul;-23.597102;-46.642102
+32;Villa Napoli;R. Martinico Prado, 463;Higienópolis;São Paulo;SP;01224-010;Centro;-23.541231;-46.654102
+33;Vesu Pizzaria;R. Des. do Vale, 835;Perdizes;São Paulo;SP;05010-040;Oeste;-23.535123;-46.683102
+34;Fornetto Pizza Bar;R. Heitor Penteado, 525;Sumarezinho;São Paulo;SP;05437-000;Oeste;-23.542102;-46.690123
+35;Sforno;R. Chilon, 311;Vila Olímpia;São Paulo;SP;04543-030;Sul;-23.595123;-46.685102
+36;Los Forajidos;R. Atibaia, 417;Pacaembu;São Paulo;SP;01235-010;Centro;-23.539102;-46.668102
+37;Divina Increnca;R. Dr. César, 1144;Santana;São Paulo;SP;02013-004;Norte;-23.502123;-46.632102
+38;Famiglia Mancini;R. Avanhandava, 81;Bela Vista;São Paulo;SP;01306-001;Centro;-23.548102;-46.647102
+39;Bráz Elettrica;R. dos Pinheiros, 440;Pinheiros;São Paulo;SP;05422-000;Oeste;-23.567102;-46.685102
+40;Ráscal;Al. Santos, 870;Jardim Paulista;São Paulo;SP;01418-100;Oeste;-23.566123;-46.653102
+41;Beco di Napoli;R. Vergueiro, 2901;Vila Mariana;São Paulo;SP;04101-300;Sul;-23.589102;-46.635102
+42;Cannoli do Calimano;R. Domingos de Morais, 2191;Vila Mariana;São Paulo;SP;04035-000;Sul;-23.592102;-46.638102
+43;Monte Verde;R. Domingos de Morais, 1729;Vila Mariana;São Paulo;SP;04035-000;Sul;-23.586102;-46.636102
+44;Diavola;R. João Ramalho, 913;Perdizes;São Paulo;SP;05008-001;Oeste;-23.534123;-46.675102
+45;Pinocchio Cucina;R. Dr. Melo Alves, 490;Jardim Paulista;São Paulo;SP;01417-010;Oeste;-23.559123;-46.665102
+46;Veridiana;R. Dona Veridiana, 661;Higienópolis;São Paulo;SP;01238-010;Centro;-23.542102;-46.649102
+47;La Braciera;R. Conselheiro Brotero, 1120;Santa Cecília;São Paulo;SP;01232-010;Centro;-23.532123;-46.660102
+48;Figo;R. Diogo Jácome, 372;Vila Nova Conceição;São Paulo;SP;04512-001;Sul;-23.593123;-46.669102
+49;Varanda 228;R. Heitor Penteado, 228;Sumarezinho;São Paulo;SP;05437-000;Oeste;-23.541102;-46.688102
+50;Guarita;R. Simão Álvares, 952;Pinheiros;São Paulo;SP;05417-020;Oeste;-23.561123;-46.691102
+51;Umberto I;R. Umberto I, 419;Vila Mariana;São Paulo;SP;04018-030;Sul;-23.585123;-46.645102
+52;Tica;R. Sergipe, 735;Consolação;São Paulo;SP;01243-001;Centro;-23.548123;-46.659102
+53;Buona Sera;Av. Nova Cantareira, 3294;Tucuruvi;São Paulo;SP;02330-001;Norte;-23.472102;-46.608102
+54;Paul's Boutique Pizza;R. Dr. Renato Paes de Barros, 167;Itaim Bibi;São Paulo;SP;04533-000;Sul;-23.583102;-46.674102
+55;Forneria San Vito;R. Francisco Leitão, 272;Pinheiros;São Paulo;SP;05414-020;Oeste;-23.564123;-46.683102
+56;Qui o Qua;R. Fernando de Albuquerque, 205;Consolação;São Paulo;SP;01309-030;Centro;-23.551102;-46.655102
+57;La Pizza di Patrick;R. Clélia, 1517;Lapa;São Paulo;SP;05042-001;Oeste;-23.525123;-46.697102
+58;Elea Forneria;R. Florinéia, 270;Água Fria;São Paulo;SP;02404-000;Norte;-23.483123;-46.621102
+59;Il Bosco;R. Dr. César, 700;Santana;São Paulo;SP;02013-002;Norte;-23.501102;-46.628102
+60;Fôrno;R. Cunha Horta, 70;Vila Buarque;São Paulo;SP;01221-030;Centro;-23.546123;-46.652102
+61;Pi Pizzas;R. Jesuíno Pascoal, 21;Vila Buarque;São Paulo;SP;01224-050;Centro;-23.543102;-46.651102
+62;Ombra;R. Harmonia, 360;Vila Madalena;São Paulo;SP;05435-000;Oeste;-23.554123;-46.686102
+63;Babbo Giovanni;Av. Senador Casemiro da Rocha, 995;Mirandópolis;São Paulo;SP;04047-002;Sul;-23.613123;-46.643102
+64;Mata Citrà;R. Inácio Pereira da Rocha, 408;Pinheiros;São Paulo;SP;05432-011;Oeste;-23.556102;-46.691102
+65;Jullia Pizzaria;R. Belchior de Azevedo, 237;Vila Leopoldina;São Paulo;SP;05089-030;Oeste;-23.528123;-46.721102
+66;Micheluccio;R. da Consolação, 2552;Cerqueira César;São Paulo;SP;01416-000;Centro;-23.558123;-46.662102
+67;Fagnolo's;R. Dr. César, 1318;Santana;São Paulo;SP;02013-004;Norte;-23.503102;-46.634102
+68;Marco Luccio;R. Dr. Melo Alves, 301;Jardim Paulista;São Paulo;SP;01417-010;Oeste;-23.558102;-46.664102
+69;Primo Basilico;Al. Gabriel Monteiro da Silva, 1144;Jardim América;São Paulo;SP;01442-000;Oeste;-23.571123;-46.674102
+70;Macedo;R. Macedo Soares, 461;Vila Mariana;São Paulo;SP;04033-010;Sul;-23.585102;-46.638102
+71;Pizzaria São Pedro;R. Javari, 333;Mooca;São Paulo;SP;03112-000;Leste;-23.556123;-46.601102
+72;Oli Pizzas Artesanais;R. Ministro Rocha Azevedo, 1056;Jardins;São Paulo;SP;01410-002;Oeste;-23.564102;-46.661102
+73;Clementina Bar;R. General Jardim, 700;Vila Buarque;São Paulo;SP;01223-011;Centro;-23.544123;-46.649102
+74;Pizzatto Pizzaria;R. Dr. César, 1422;Santana;São Paulo;SP;02013-004;Norte;-23.504102;-46.636102
+75;Org;R. Harmonia, 417;Vila Madalena;São Paulo;SP;05435-000;Oeste;-23.554102;-46.687102
+76;Speranza;R. Treze de Maio, 493;Bela Vista;São Paulo;SP;01327-000;Centro;-23.555123;-46.644102
+77;Forno da Vila;R. Dr. Nicolau de Sousa Queirós, 503;Vila Mariana;São Paulo;SP;04105-001;Sul;-23.581102;-46.639102
+78;Forneria Mooca;R. da Mooca, 3381;Mooca;São Paulo;SP;03165-000;Leste;-23.565123;-46.591102
+79;Real Pizzaria;R. Itapura, 1500;Vila Gomes Cardim;São Paulo;SP;03310-000;Leste;-23.541123;-46.564102
+80;Leona;R. Constantino de Sousa, 582;Campo Belo;São Paulo;SP;04605-001;Sul;-23.621123;-46.674102
+81;Margherita Pizzeria;Al. Tiête, 255;Jardins;São Paulo;SP;01417-020;Oeste;-23.562123;-46.668102
+82;Camelo;R. Pamplona, 1873;Jardim Paulista;São Paulo;SP;01405-002;Oeste;-23.571102;-46.657102
+83;Domino's;Av. Pavão, 589;Moema;São Paulo;SP;04516-011;Sul;-23.606123;-46.669102
+84;SalaVip;R. Cisplatina, 195;Ipiranga;São Paulo;SP;04211-040;Sul;-23.593123;-46.611102
+85;Graça di Napoli;R. Dr. César, 704;Santana;São Paulo;SP;02013-002;Norte;-23.501123;-46.629102
+86;Pizza Chena;R. Peixoto Gomide, 1078;Jardim Paulista;São Paulo;SP;01409-001;Oeste;-23.563123;-46.658102
+87;Chaplin;R. Luiz dos Santos Cabral, 174;Jardim Anália Franco;São Paulo;SP;03337-050;Leste;-23.559123;-46.562102
+88;Galpão da Pizza;R. Dr. Augusto de Miranda, 1156;Vila Pompeia;São Paulo;SP;05026-001;Oeste;-23.529123;-46.684102
+89;Soggiorno;R. Cerro Corá, 1841;Alto da Lapa;São Paulo;SP;05061-400;Oeste;-23.541123;-46.711102
+90;A Esperança;R. Pedroso Alvarenga, 716;Itaim Bibi;São Paulo;SP;04531-011;Sul;-23.584123;-46.677102
+91;Zi Tereza di Napoli;Av. Fagundes Filho, 153;Vila Monte Alegre;São Paulo;SP;04304-010;Sul;-23.626123;-46.634102
+92;Dei Cugini;R. João Cachoeira, 452;Itaim Bibi;São Paulo;SP;04535-001;Sul;-23.586123;-46.675102
+93;Dona Firmina;Al. dos Anapurus, 1491;Moema;São Paulo;SP;04087-005;Sul;-23.612123;-46.661102
+94;Vito's NY Kitchen;R. Ferreira de Araújo, 450;Pinheiros;São Paulo;SP;05428-000;Oeste;-23.563123;-46.701102
+95;A Tal da Pizza;R. Meira Júnior, 33;Itanhangá;São Paulo;SP;04729-110;Sul;-23.642123;-46.702102
+96;Pizzaria do Angelo;R. Sapucaia, 527;Mooca;São Paulo;SP;03170-050;Leste;-23.559123;-46.594102
+97;Pizza Hut;Av. dos Bandeirantes, 321;Vila Olímpia;São Paulo;SP;04553-010;Sul;-23.595123;-46.681102
+98;Al Capizza;R. Simão Álvares, 742;Pinheiros;São Paulo;SP;05417-020;Oeste;-23.560123;-46.689102
+99;Itzza;R. Abílio Soares, 1269;Paraíso;São Paulo;SP;04005-004;Sul;-23.581123;-46.651102
+100;Cristal;R. Arthur de Azevedo, 1157;Pinheiros;São Paulo;SP;05404-013;Oeste;-23.565123;-46.684102
